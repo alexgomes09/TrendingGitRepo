@@ -8,6 +8,6 @@
     <string name="description">Description:</string>
     <string name="open_in_browser">Open in Browser</string>
     <string name="created_at">Created at:&#160;&#160;</string>
-    <string name="updated_at">Updated at</string>
+    <string name="updated_at">Updated at:</string>
     <string name="issues">Open Issues:&#160;&#160;</string>
 </resources>

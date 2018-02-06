@@ -1,9 +1,7 @@
 package com.test.trendinggitrepo.network
 
 import android.app.Activity
-import android.widget.Toast
 import com.test.trendinggitrepo.BuildConfig
-import com.test.trendinggitrepo.R
 import com.test.trendinggitrepo.model.RepoResponse
 import com.test.trendinggitrepo.util.AppUtil
 import com.test.trendinggitrepo.util.Constants
@@ -23,7 +21,7 @@ import java.util.concurrent.TimeUnit
  */
 object RestAdapter {
 
-    private lateinit var apiService: ApiService
+    private var apiService: ApiService
 
     init {
         val okHttpClientBuilder = OkHttpClient.Builder()
@@ -34,7 +32,6 @@ object RestAdapter {
         val loggingInterceptor = HttpLoggingInterceptor()
         loggingInterceptor.level = HttpLoggingInterceptor.Level.BASIC
         if (BuildConfig.DEBUG) {
-            // this will print request and response for every call in logcat
             okHttpClientBuilder.addInterceptor(loggingInterceptor)
         }
 
@@ -47,13 +44,6 @@ object RestAdapter {
         apiService = retrofit.create(ApiService::class.java)
     }
 
-    private fun checkForInternet(context: Activity): Boolean {
-        if (!AppUtil.hasNetworkConnectivity(context)) {
-            Toast.makeText(context, context.getString(R.string.no_connectivity_message), Toast.LENGTH_LONG).show()
-            return false
-        }
-        return true
-    }
 
     private class CustomCallback<T> internal constructor(internal var onResponseListener: OnResponseListener<RepoResponse>) : Callback<T> {
 
@@ -62,7 +52,7 @@ object RestAdapter {
                 onResponseListener.onSuccess(response.body() as RepoResponse)
             } else {
                 try {
-                    onResponseListener.onFailure(response.errorBody().toString())
+                    onResponseListener.onFailure("Encountered server error. Please try again shortly")
                 } catch (e: IOException) {
                     e.printStackTrace()
                 }
@@ -75,7 +65,8 @@ object RestAdapter {
     }
 
     fun GetTrendingAndroid(context: Activity, onResponseListener: OnResponseListener<RepoResponse>) {
-        if (!checkForInternet(context)) return
+        //we check internet connection before making every network call
+        if (!AppUtil.checkForInternet(context)) return
 
         val repoList: Call<RepoResponse> = apiService.listRepo()
         repoList.enqueue(CustomCallback<RepoResponse>(onResponseListener))

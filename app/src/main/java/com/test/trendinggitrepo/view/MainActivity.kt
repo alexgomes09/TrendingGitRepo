@@ -3,7 +3,7 @@ package com.test.trendinggitrepo.view
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
-import android.util.Log
+import android.widget.Toast
 import com.test.trendinggitrepo.R
 import com.test.trendinggitrepo.adapter.RepoListAdapter
 import com.test.trendinggitrepo.model.RepoResponse
@@ -15,31 +15,26 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
 
     var repos: ArrayList<RepoResponse.Repo> = ArrayList()
-    var repoListAdapter: RepoListAdapter = RepoListAdapter(this,repos)
+    var repoListAdapter: RepoListAdapter = RepoListAdapter(this, repos)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        repoList.layoutManager = LinearLayoutManager(this);
+        repoList.layoutManager = LinearLayoutManager(this)
         repoList.adapter = repoListAdapter
 
-        getAndroidTrendingRepos()
+        getAndroidTrendingRepos() // make initial network call
 
         swipeLayout.setOnRefreshListener {
             getAndroidTrendingRepos()
             swipeLayout.isRefreshing = false
         }
-
-        if(savedInstanceState != null){
-            // scroll to existing position which exist before rotation.
-            repoList.scrollToPosition(savedInstanceState.getInt("position"));
-        }
     }
 
     override fun onBackPressed() {
         super.onBackPressed()
-        if(supportFragmentManager.backStackEntryCount <=0){
+        if (supportFragmentManager.backStackEntryCount <= 0) {
             supportActionBar?.title = getString(R.string.app_name)
         }
     }
@@ -54,7 +49,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onFailure(failure: String) {
-                Log.v("==TAG==", "onFailure " + failure);
+                Toast.makeText(this@MainActivity,failure,Toast.LENGTH_LONG).show()
             }
         })
     }

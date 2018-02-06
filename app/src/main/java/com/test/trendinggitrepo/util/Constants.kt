@@ -6,7 +6,7 @@ package com.test.trendinggitrepo.util
 class Constants {
 
     companion object {
-        val BASE_URL = "https://api.github.com";
-        val networkTimeOut = 30L;
+        val BASE_URL = "https://api.github.com"
+        val networkTimeOut = 30L
     }
 }

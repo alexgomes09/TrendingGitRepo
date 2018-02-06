@@ -39,10 +39,6 @@ class RepoListAdapter(private val ctx: Context,
         holder.repoStars.text = repoList[position].stars.toString()
     }
 
-//    fun getAPosition(): Int{
-//        return adapterPosition
-//    }
-
     override fun getItemCount(): Int = repoList.size
 
     inner class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
