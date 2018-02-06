@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:clickable="true"
+    android:focusable="true"
+    android:padding="20dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/repo_image_detail"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            tools:src="@mipmap/ic_launcher_round"/>
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/repo_name_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/repo_image_detail"
+            android:layout_marginTop="20dp"
+            android:text="@string/name"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/repo_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/repo_image_detail"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@id/repo_name_text"
+            android:textSize="16sp"
+            tools:text="@string/app_name"/>
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/repo_full_name_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/repo_name_text"
+            android:text="@string/full_name"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/repo_full_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/repo_name"
+            android:layout_toRightOf="@id/repo_full_name_text"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textSize="16sp"
+            tools:text="@string/app_name"/>
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/repo_stars_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/repo_full_name_text"
+            android:text="@string/stars"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/repo_stars_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/repo_full_name"
+            android:layout_toRightOf="@id/repo_stars_text"
+            android:textSize="16sp"
+            tools:text="@string/app_name"/>
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/repo_forks_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/repo_stars_text"
+            android:text="@string/forks"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/repo_forks_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/repo_stars_detail"
+            android:layout_toRightOf="@id/repo_forks_text"
+            android:textSize="16sp"
+            tools:text="@string/app_name"/>
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/repo_issues_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/repo_forks_text"
+            android:text="@string/issues"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/repo_issues"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/repo_forks_detail"
+            android:layout_toRightOf="@id/repo_issues_text"
+            android:textSize="16sp"
+            tools:text="@string/app_name"/>
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/repo_created_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/repo_issues"
+            android:text="@string/created_at"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/repo_created"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/repo_issues"
+            android:layout_toRightOf="@id/repo_created_text"
+            android:textSize="16sp"
+            tools:text="@string/app_name"/>
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/repo_updated_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/repo_created_text"
+            android:text="@string/updated_at"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/repo_updated"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/repo_created_text"
+            android:layout_toRightOf="@id/repo_created_text"
+            android:textSize="16sp"
+            tools:text="@string/app_name"/>
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/repo_description_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/repo_updated_text"
+            android:layout_marginTop="20dp"
+            android:text="@string/description"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/repo_description_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/repo_description_text"
+            android:layout_marginTop="10dp"
+            android:textSize="16sp"
+            tools:text="@string/app_name"/>
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/external_link"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/repo_description_detail"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:text="@string/open_in_browser"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+    </RelativeLayout>
+</ScrollView>

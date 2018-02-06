@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">TrendingGitRepo</string>
+    <string name="no_connectivity_message">Please Connect to Internet</string>
+    <string name="name">Name:&#160;&#160;</string>
+    <string name="full_name">Full Name:&#160;&#160;</string>
+    <string name="stars">Stars:&#160;&#160;</string>
+    <string name="forks">Forks:&#160;&#160;</string>
+    <string name="description">Description:</string>
+    <string name="open_in_browser">Open in Browser</string>
+    <string name="created_at">Created at:&#160;&#160;</string>
+    <string name="updated_at">Updated at</string>
+    <string name="issues">Open Issues:&#160;&#160;</string>
+</resources>

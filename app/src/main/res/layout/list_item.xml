@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:orientation="horizontal"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="1dp"
+    app:cardUseCompatPadding="true"
+    app:contentPadding="10dp">
+
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/repo_image"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:scaleType="centerInside"
+        tools:src="@mipmap/ic_launcher_round"/>
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/repo_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="90dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textStyle="bold"
+        tools:text="Repo Title"/>
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/repo_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="90dp"
+        android:layout_marginTop="25dp"
+        android:ellipsize="end"
+        android:maxLines="2"
+        tools:text="Repo Description"/>
+
+    <android.support.v7.widget.AppCompatImageView
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_gravity="bottom"
+        android:scaleType="centerInside"
+        app:srcCompat="@drawable/ic_git_forks"
+        tools:src="@mipmap/ic_launcher_round"/>
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/repo_forks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginLeft="30dp"
+        android:textSize="16sp"
+        tools:text="26000"/>
+
+
+    <android.support.v7.widget.AppCompatImageView
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_gravity="bottom"
+        android:layout_marginLeft="110dp"
+        android:scaleType="centerInside"
+        app:srcCompat="@drawable/ic_git_stars"
+        tools:src="@mipmap/ic_launcher_round"/>
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/repo_stars"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginLeft="145dp"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        tools:text="30000000"/>
+
+
+</android.support.v7.widget.CardView>
